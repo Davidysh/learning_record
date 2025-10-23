@@ -407,3 +407,26 @@ from hq_db.t_online_product_center_detail a
 inner join hq_db.t_online_product_center_person_infor b
 on a.sku = b.sku
 where a.sku = '';
+count(1) 统计所有行 count(*) 统计所有列
+
+
+ALTER TABLE hq_db.t_shipping_logistics_provider 
+ADD COLUMN loading_list_file varchar(2000) NOT NULL DEFAULT '' COMMENT '装舱单列表';
+与ALTER TABLE hq_db.t_shipping_logistics_provider ADD COLUMN loading_list_file VARCHAR(2000) NULL;的区别是什么
+前者允许有空值并且有注释
+
+
+## 定义model类型
+class YourModelName(models.Model):
+    asin = models.CharField(
+        max_length=255,
+        null=True,
+        blank=True,
+        db_collation='utf8_general_ci',
+        verbose_name='ASIN'
+    )
+    
+    class Meta:
+        db_table = 'your_table_name'  # 你的实际表名
+        verbose_name = '模型名称'
+        verbose_name_plural = '模型名称复数'

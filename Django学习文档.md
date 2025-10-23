@@ -399,3 +399,7 @@ InterfaceFunction().get_function_desc()
 ## 供应商交期延误信息
 目前已经开发出来了
 但是速度太慢初步判断是CGOrderLarge::get_cg_contract_overdue_days 方法的反复调用导致的时间太慢
+
+## 全局页面开发
+1.所需要的表是从何判断
+从需求人那里得知
